@@ -5,7 +5,7 @@
   padding: 1rem 2rem;
   background-color: #282c34;
   color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для шапки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
