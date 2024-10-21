@@ -5,12 +5,7 @@ export const Conferences = () => {
 
   useEffect(() => {
     fetch("http://localhost:5000/conferences")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Сеть ответа не была успешной.");
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => setConferences(data))
       .catch((error) => console.error("Ошибка:", error));
   }, []);
@@ -19,11 +14,11 @@ export const Conferences = () => {
     <section>
       <h3>Предстоящие конференции</h3>
       <ul>
-        {conferences.map((conference) => (
-          <li key={conference.id}>
+        {conferences.map((conference, index) => (
+          <li key={index}>
             <h4>{conference.title}</h4>
             <p>Дата: {conference.date}</p>
-            <p>Место: {conference.location}</p>
+            <p>Организаторы: {conference.sponsor}</p>
           </li>
         ))}
       </ul>
